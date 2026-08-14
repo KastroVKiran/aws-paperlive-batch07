@@ -1,0 +1,82 @@
+IAM Roles
+IAM Users
+IAM Policies
+IAM Groups
+==============
+AWS Global Infrastructure
+	Regions
+	AZs
+==============
+Cloud Computing Models
+	Service-based			- IaaS, PaaS, SaaS
+	Deployment-based		- Public, Private, Hybrid, Community
+==============
+3 Major Cloud Service Providers;
+	AWS***
+	Azure**
+	GCP*
+==============
+AWS - Amazon Web Services
+
+Cloud?
+	Storage, Network, Computing, Security....
+Any service that is delivered over the internet is known as Cloud
+
+Amazon App ----> Servers (Physical Server, Virtual Machines)
+==============
+AWS Services - 200+ services
+IAM, S3, EC2, VPC, RDS, Route53,...
+
+EC2
+==============
+S3 - Simple Storage Service
+S3 is used to store data in the AWS Cloud
+	data - images, documents, videos....
+
+Folder	- Bucket
+Data	- Object(s)
+
+S3 Bucket Types;
+General Purpose Buckets	- automatically AWS will maintain 3/6 copies of the same object in that region
+Directory Buckets			- objects will get stored only in one AZ - if AZ gets failed, the data will lost
+
+Regions	- Physical Location, Regions consists of AZs
+AZ		- AZs consists of data centers - Data centers consists of data - A minimum of 3 AZs will be there in each region, max regions 6
+
+Mumbai			- 3 AZs	- AZ1, AZ2, AZ3
+Hyderabad*
+
+N.Virginia		- 6 AZs
+
+Region Specific Services
+Global Services	- IAM
+
+100 Buckets/account
+5 GB/Bucket (Free tier users)
+Upto 5TB/Bucket (Paid users)
+
+Bucket name must be globally unique
+
+1) Creation of Bucket
+2) Uploading an Objects
+
+Every object will get its own URL, which is known as Object URL
+Using the Object URL we can access the data, outside of the cloud
+
+By default any object that is uploaded to the bucket will not be accessible outside of the cloud
+
+3) Making an Object Public
+	Enable ACL (Access Control List) - by default this is disabled (while creating the bucket)	
+	Block all public access
+	Make public using ACL 
+	
+Note: We cannot delete a bucket which is having objects
+
+Static Website Hosting in S3
+
+Types of websites;
+Static Website		- doesn't change based on the user/location/device
+Dynamic Website		- changes
+
+Bucket - 1 Object - Make it public
+Bucket - > 1 Object - Make all the objects public at a time - Static Website Hosting
