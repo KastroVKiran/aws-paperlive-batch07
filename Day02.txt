@@ -1,0 +1,68 @@
+Versioning
+If you want to maintain multiple versions of the same file (file name) without overwriting
+By default, the versioning is disabled for the bucket
+	During the bucket creation
+	After the bucket creation
+
+States of a bucket;
+	Unversioned bucket		- for which versioning is disabled
+	Versioning enabled		- toogle bar will be visible	- for every object that is uploaded after versioning is enabled, we will get version id/number (alpha-numeric)
+	Versioning suspended		- when you disable versioning for the bucket
+
+kastro.txt	- 8.00 PM	- DevOps	- version id
+kastro.txt	- 8.05 PM	- AWS		- version id
+
+Bucket creation - 8.00 PM
+5 files	- NULL
+Versioning enabled for Bucket - 8.10 PM
+kastro.txt	- version id
+kastro.txt	- version id
+kastro.txt	- version id
+kiran.txt		- version id
+Disabled versioning for the bucket - 8.30 PM
+aws.txt			- NULL
+Netflix.java		- NULL					
+
+Before enabling the versioning
+kastro.txt.txt				August 14, 2026, 20:23:24 (UTC+05:30)			null												Version01
+Enable versioning for the bucket
+kastro.txt.txt				August 14, 2026, 20:28:48 (UTC+05:30)		xh5M_wQJ3MabYFO9E2u4Hkr0HuJKOPxW		Version02
+kastro.txt.txt				August 14, 2026, 20:31:44 (UTC+05:30)		2BtpeCbQxr5xPoW19lesCrQJmNRDbBJS			Version03
+AWS_3Tier_Project.txt	August 14, 2026, 20:33:04 (UTC+05:30)		bfs6UnG2Qu1fr3keWD0sEYzyxkE4oBro
+Suspend versioning for the bucket
+aws.txt					August 14, 2026, 20:35:48 (UTC+05:30)		null (AWS is one of the leading service providers)
+aws.txt					August 14, 2026, 20:37:34 (UTC+05:30)		null (AWS has 250+ services)
+						August 14, 2026, 20:37:34 (UTC+05:30)		
+After enabling versioning for the bucket
+uploaded a file;
+aws.txt					August 14, 2026, 20:41:23 (UTC+05:30)
+delete the file which is uploaded after enabling versioning for the bucket
+aws.txt																Delete marker
+
+To recover a deleted file which is having 'delete marker' tag, delete the 'delete marker' file
+file will get recovered
+August 14, 2026, 20:41:23 (UTC+05:30)
+
+=> S3 Replication
+If you want to maintain the duplicate copies of the same file
+It is mandatory to enable versioning for the bucket
+
+Methods;
+Cross region replication	(B1 - Mumbai ------> B2 - N.Virginia)	- Same account
+Same region replication	(B1 - Mumbai ------> B2 - Mumbai)		- Same account
+Cross account replication	B1 (any region) (Account 1)	------> B2 (any region) (Account 2) 
+
+=> Storage Classes in S3
+Frequently Accessed		- any data that you are accessing on a daily basis
+Infrequently Accessed	- any data that you are accessing once in a month
+
+To minimize the cost to the client
+
+App
+100 files/day		- Standard storage class - 10 Rs per file - 1000 Rs/day
+
+Life cycle Management
+Day 1 - Day 10	- Standard
+Day 11 - Day 15	- Standard-IA
+Day 16 - Day 30	- Glacier Instant Retrieval
+Day 31 - Day 65	- Glacier Flexible Retrieval
