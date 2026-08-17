@@ -1,0 +1,70 @@
+Storage Classes: https://youtu.be/TvkyDfJrh6A?si=QBzoXY0z823SqOM7
+
+=========
+EC2
+=========
+Elastic Compute Cloud
+
+Server - A server is a computer or a software program on a network that stores data and provides services to other devices
+
+Types of Servers;
+	Physical Server	- will be there in a geographical location
+	Virtual Machine	- servers being launched in the cloud environment 
+
+	AWS - EC2 Instances / VMs
+	Azure - Azure VMs
+
+Pricing: Varies based on type of instance - pay-as-you-use model
+
+EC2 is a region specific region
+
+Pre-requisites to launch a VM;
+Select the region
+Name (optional)
+Selection of AMI (Amazon Machine Image) - Operating System (Linux/Ubuntu/RedHat OS)
+Selection of instance type (RAM, vCPUs)
+Creation of keypair (.pem / .ppk) - download and store in a secured location
+Selection of network (VPC - every region in AWS cloud will get its own default VPC) - Security Group
+Selection of storage (EBS Volumes - 30 GB)
+
+Connecting to the VM;
+1. within the cloud
+2. using 3rd party tools (MobaXTerm (.pem), PuTTY (.ppk))
+
+Note: Every instance will get two types of IPs (Public IP - which is used to connect to the instance using 3rd party tools, Private IP - which is used to establish the communication b/w two or more instances)
+
+Instance types;
+
+Security Group;
+which decides what traffic to enter into the instance and what traffic should leave the instance
+	Port Numbers	- 22 (used for SSH connection), 80 (webservers - nginx, apache/httpd)
+		SSH- Secure Socket Host/Secure Shell
+
+We can use the same keypair, which is there in a specific region, for multiple instances
+We can use the existing SG, which is there in a specific region, for multiple instances
+
+							
+Username
+Amazon Linux 	-----> ec2-user
+Ubuntu			-----> ubuntu
+RedHat			-----> ec2-user
+
+
+launch-wizard-10'
+
+Allow SSH traffic from
+
+
+Instance states;
+Initializing		- will take some time to setup the configurations
+Running			- once the instance is in the running, then we can connect to the instance - Billing is based 'running'
+Stopping			- 
+Stopped			- you cannot connect to the instance (Public IP will get deactivated)
+Shutting down	- 
+Terminated		- everything that is available in the instance will be deleted
+
+Before stopping;
+3.110.135.71				172.31.13.151
+
+After restarting the instance;
+13.204.86.5				172.31.13.151
