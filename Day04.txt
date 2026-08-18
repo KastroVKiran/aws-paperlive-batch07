@@ -1,0 +1,56 @@
+Date: 18-08-2025
+================
+Hosting a web app;
+	web servers - nginx, apache/httpd
+	Port number - 80
+
+yum/dnf update -y
+apt update -y
+
+Task: Install Apache/httpd and host a custom html file in the EC2 instance
+
+=> Amazon Machine Image (AMI)
+Launch EC2 Instance	-----> Install NGINX, Create 2 directories, Create 2 python files, Install git, Install maven
+Launch EC2 Instance	-----> Install NGINX, Create 2 directories, Create 2 python files, Install git, Install maven
+Launch EC2 Instance	-----> Install NGINX, Create 2 directories, Create 2 python files, Install git, Install maven
+Launch EC2 Instance	-----> Install NGINX, Create 2 directories, Create 2 python files, Install git, Install maven
+....
+Creation of custom AMIs is possible on top of base/parent AMI
+
+AMI - nginx, git, maven, kastro, aws.txt
+
+Creation of EC2 instance using custom AMI
+
+Instance is created at 9.00 AM
+	installed packages - java, maven, git ----- python, Jenkins, docker
+9.10 AM - created the AMI
+
+=> Elastic Block Storage (EBS)
+		Root Volume - is the default volume which is attached to the instance
+		EBS Volume(s) - is the additional storage attached to the instance
+
+EBS Volumes are AZ specific
+EBS Volume - ap-south-1a ----> If I have to attach this volume to a new/existing instance, make sure the instance is there in the same AZ within the region
+
+Types of EBS Volumes;
+based on IOPS, min and max storage
+
+SSD (better performance), HDD (slow performance)
+
+General Purpose
+gp2, gp3
+
+Provisioned IOPS
+io1
+io2
+io2 block express
+
+Magnetic (Previous generation)
+
+Resizing the root volume;
+8 GB ----> 10 GB
+
+Creation of EBS Volume
+
+Attach an EBS Volume to the exisitng VM (20 volumes can be attached)
+
