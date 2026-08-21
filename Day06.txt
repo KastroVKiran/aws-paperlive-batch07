@@ -1,0 +1,11 @@
+21-08-2026
+===========
+High Availability;
+
+SNS - Simple Notification Service
+Emails
+Mobile Numbers
+
+Load Balancer
+
+Cloud Watch
