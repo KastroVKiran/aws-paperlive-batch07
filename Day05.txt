@@ -1,0 +1,49 @@
+Date: 20-08-2025
+================
+Connecting to the VM (with in the AWS Console);
+	EC2 instance connect	- open 22, no need of keypair
+	Sessions manager		- no need of port 22, no need of keypair - production environment
+	SSH Client			- open 22, need keypair
+	EC2 serial console		- no need of port 22, no need of keypair 
+
+AMI;
+Copy of VM
+
+EBS - backup of EBS Volumes - Snapshots
+incremental snapshot
+	10.00 AM - snapshot 1 - 2 files and 2 directories
+				3 python files, 2 java files
+	11.00 AM - snapshot 2 - 3 python files, 2 java files
+				2 .net files, 2 text files
+	12.00 PM - snapshot3 - 2 .net files, 2 text files
+
+Manual backup 
+Automated backup*
+
+Elastic IP;
+to have a static IP address (public IP) to the instance
+aws will charge
+1 elastic IP can only be attached to one instance at a time
+
+13.233.137.139 - Public IP
+13.207.66.22 -Elastic IP
+13.207.66.22
+15.252.165.47
+
+
+Userdata;
+
+Autoscaling;
+is the process of automatically adjusting the number of instances based on the traffic
+Types;
+Horizontal AS
+Vertical AS
+
+Load balancers;
+App LB**
+Network LB
+Gateway LB
+Classic LB (old)
+
+Changing instance type;
+
